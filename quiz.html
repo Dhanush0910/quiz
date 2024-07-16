@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="png" href="quiz-image.png">
+</head>
+<body>
+    <div class="result-box">
+        <h2>Quiz Result!</h2>
+        <div class="percentage-container">
+            <div class="progress-circle">
+                <span class="progress-value">0%</span>
+            </div>
+            <span class="score-text">Your Score is 0 out of 5</span>
+            <div class="bottom-bottons">
+                <button class="tryAgain">Try Again</button>
+                <a class="goHome" href="index.html">Go To Home</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">        
+        <section class="quiz-section">
+            <h1>Technical Quiz</h1>
+            <div class="questions-section">
+                <h4 class="question-text">1. What does HTML stands for?</h4>
+                <div class="options-container">
+                    <div class="options-one" onclick="optionSelected(this)">A. Hyper Text Main Language</div>                
+                    <div class="options-one" onclick="optionSelected(this)">B. Hyper Text Markup Language</div>
+                    <div class="options-one" onclick="optionSelected(this)">C. Hyper Text Muliple Language</div>
+                    <div class="options-one" onclick="optionSelected(this)">D. Hyper Text Multi Language</div>               
+                </div>
+            </div>
+            <div class="bottom-one">
+                    <span id="question-total">1 of 5 Questions</span>
+                    <button class="next-one">Next</button>                    
+            </div>
+            
+
+        </section>
+    </div>
+    
+
+    <script src="questions.js"></script>
+
+</body>
+</html>

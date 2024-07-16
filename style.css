@@ -1,0 +1,394 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body{
+    color: white;
+    background: rgb(8, 12, 59);
+}
+.main{
+    min-height: 100vh;
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    pointer-events: auto;
+}
+.main.active{
+    filter: blur(11px);
+    pointer-events: none;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 10%;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    font-size: 20px;
+}
+.navigation a{
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 35px;
+    color: aliceblue;
+    text-decoration: none;
+    transition: .3s;
+ }
+
+.navigation a:hover{
+    color: aqua;
+}
+ .navigation a.home-heading.active{
+    color: rgb(183, 183, 40);
+}
+.navigation a.about-heading.active{
+    color: rgb(183, 183, 40);
+
+}
+.navigation a.help-heading.active{
+    color: rgb(183, 183, 40);
+}
+.navigation a.contact-heading.active{
+    color: rgb(183, 183, 40);
+}
+
+.home{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-content{
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.home-content h1{
+    font-size: 75px;
+    text-shadow: 3px 3px 10px black;
+}
+.home-content p{
+    font-size: 18px;
+    text-shadow: 0 0 10px black;
+    margin-bottom: 30px;
+}
+.home-content #start{
+    width: 250px;
+    height: 50px;
+    background-color: rgb(10, 214, 236);
+    border: 2px solid;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgb(10, 214, 236);
+    font-size: 18px;
+    color:white;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .5s;
+}
+.home-content #start:hover{
+    background-color: black;
+    box-shadow: none;
+}
+ 
+.popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 500px;
+    background-color: white;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+.popup.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+.popup h2{
+    font-size: 50px;
+    color: rgb(10, 214, 236);
+}
+.popup .info{
+    margin: 4px 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+.popup .buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid black;
+    margin-top: 10px;
+    padding: 15px 0 7px;
+}
+.popup .buttons #exit{
+    width: 130px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid rgb(10, 214, 236);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    color: rgb(10, 214, 236);
+    font-weight: 600;
+    box-shadow: 0 0 6px rgb(59, 53, 53);
+    transition: .5s;
+}
+.popup .buttons #continue{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 40px;
+    background-color: rgb(10, 214, 236);
+    border: 2px solid rgb(10, 214, 236);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 0 6px rgb(59, 53, 53);
+    transition: .5s;
+}
+.popup .buttons #exit:hover{
+    box-shadow: inset 0 0 6px black;
+}
+.popup .buttons #continue:hover{
+    box-shadow: inset 0 0 6px black;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 450px;
+    background-color: rgb(22, 11, 58);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: centers;
+    padding: 10px 25px;
+    transition: .3s ease;
+    border: 2px solid rgb(10, 214, 236);
+    height: 465px;
+    opacity: 1;
+}
+.container.active{
+    opacity: 0;
+    pointer-events: none;
+}
+.quiz-section{
+    color: white;
+    padding: 10px 0;
+}
+.quiz-section h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    background-color: rgb(14, 153, 169);
+    padding: 5px 0;
+}
+.questions-section{
+    margin-top: 20px;
+    border-top: 2px solid rgb(10, 214, 236);
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgb(10, 214, 236);
+}
+
+.questions-section .question-text{
+    font-weight: 700;
+    font-size: 18px;
+}
+.options-container{
+    padding: 20px 0 0;   
+}
+.options-one{
+    padding: 10px;
+    width: 100%;
+    background-color: rgb(22, 11, 58);
+    color: white;
+    border: 1px solid rgb(170, 219, 218);
+    cursor: pointer;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    font-size: 16px;
+}
+.options-one:hover{
+    background-color: rgb(35, 21, 81)
+}
+.options-one.correct{
+    background-color: green;
+}
+.options-one.incorrect{
+    background-color: red;
+}
+.options-one.disabled{
+    pointer-events: none;
+}
+
+.bottom-one{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 25px;
+}
+.bottom-one .next-one{
+    width: 130px;
+    height: 40px;
+    border: 2px solid rgb(10, 214, 236);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .3s;
+    background-color: rgb(22, 11, 58);
+    border: 2px solid rgb(25, 106, 134);
+    pointer-events: none;
+}
+.bottom-one .next-one.active{
+    box-shadow: inset 2px 2px 2px 2px rgb(19, 77, 83);
+    background-color: rgb(9, 161, 177);
+    border: 2px solid rgb(42, 178, 193);
+    pointer-events: auto;
+}
+
+.bottom-one .next-one.active:hover{
+    background-color: rgb(14, 72, 78);
+    box-shadow: 0 0 2px rgb(0, 229, 255);
+
+}
+
+.result-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    left: 0;
+    transform: translate(-50%,-50%);
+    border: 2px solid rgb(0, 229, 255);
+    padding: 20px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s;
+}
+.result-box.on{
+    opacity: 1;
+    pointer-events: auto;
+    left: 50%;
+}
+.result-box h2{
+    font-size: 35px;
+}
+.result-box .percentage-container{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 0;
+}
+.percentage-container .progress-circle{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: conic-gradient(cyan 3.6deg, rgb(70, 67, 67) 0deg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.percentage-container .progress-circle::before{
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    background-color: rgb(22, 11, 58);
+    border-radius: 50%;
+}
+
+.progress-circle .progress-value{
+    position: relative;
+    font-size: 45px;
+    font-weight: 600;
+}
+.percentage-container .score-text{
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.bottom-bottons{
+    margin: 20px 5px;
+    padding: 10px;
+    display: flex;
+}
+.bottom-bottons .tryAgain{
+    width: 130px;
+    height: 40px;
+    border: 2px solid rgb(10, 214, 236);
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgb(255, 255, 255);
+    font-size: 16px;
+    color: rgb(10, 214, 236);
+    font-weight: 600;
+    background-color: white;
+    margin-left: 0;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.bottom-bottons .goHome{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 16px;
+    box-shadow: 0 0 6px rgb(255, 255, 255);
+    background-color: rgb(0, 229, 255);
+    border: 2px solid rgb(10, 214, 236);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 0;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.bottom-bottons .tryAgain:hover{
+    box-shadow: inset 0 0 6px black;
+
+}
+.bottom-bottons .goHome:hover{
+    box-shadow: inset 0 0 6px black;
+}
