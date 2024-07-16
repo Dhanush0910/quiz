@@ -392,3 +392,29 @@ body{
 .bottom-bottons .goHome:hover{
     box-shadow: inset 0 0 6px black;
 }
+@media (max-width: 768px) {
+    .header {
+        height: auto;
+        padding: 5%;
+        font-size: 16px;
+        justify-content: center;
+    }
+    .home-content h1{
+        padding: 18%;
+        padding-bottom: 0;
+        font-size: 65px;
+    }
+    .home-content .heading{
+        display: flex;
+        justify-content: center;
+    }
+    .popup{
+        width: 320px;
+    }
+    .container{
+        width: 380px;
+    }
+    .result-box{
+        width: 380px;
+    }
+}
