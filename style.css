@@ -399,6 +399,9 @@ body{
         font-size: 16px;
         justify-content: center;
     }
+    .navigation{
+        font-size: 15px;
+    }
     .home-content h1{
         padding: 18%;
         padding-bottom: 0;
